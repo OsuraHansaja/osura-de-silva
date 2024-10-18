@@ -332,9 +332,24 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
+
+.avatar-box img {
+  border-radius: 50%; /* Ensure the image is circular */
+  width: 100px;  /* Adjust to the size you want */
+  height: 150px; /* Make sure height is equal to width */
+  object-fit: cover; /* Ensure the image doesn't get stretched */
+}
+
+@media (max-width: 1242px) {
+  .avatar-box {
+    display: none; /* Hide the profile picture container */
+  }
+}
+
 
 .info-content .name {
   color: var(--white-2);
@@ -839,7 +854,25 @@ main {
 .skills-list { padding: 20px; }
 
 
-.skills-item:not(:last-child) { margin-bottom: 15px; }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if there are too many icons */
+  justify-content: center; /* Center the icons horizontally */
+  gap: 15px; /* Add space between the icons */
+}
+
+.skills-item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon {
+  width: 50px;  /* Adjust the size as needed */
+  height: 50px;
+}
+
 
 .skill .title-wrapper {
   display: flex;
